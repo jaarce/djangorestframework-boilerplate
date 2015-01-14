@@ -18,8 +18,11 @@ matrix:
 
 install:
   - pip install -r requirements.txt
+  - pip install coveralls
 
-script: nosetests
+script:
+  - python manage.py test brighten
+  - coverage run --source=brighten manage.py test brighten
 
 after_success:
   - coveralls
