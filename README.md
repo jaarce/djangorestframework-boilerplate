@@ -1,4 +1,5 @@
 # djangorestframework-boilerplate
+[![Build Status](https://travis-ci.org/jaarce/djangorestframework-boilerplate.svg)](https://travis-ci.org/jaarce/djangorestframework-boilerplate)
 [![Coverage Status](https://img.shields.io/coveralls/jaarce/djangorestframework-boilerplate.svg)](https://coveralls.io/r/jaarce/djangorestframework-boilerplate)
 [![Circle CI](https://circleci.com/gh/jaarce/djangorestframework-boilerplate.svg?style=svg)](https://circleci.com/gh/jaarce/djangorestframework-boilerplate)
 
