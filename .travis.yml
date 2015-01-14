@@ -1,19 +1,27 @@
 language: python
 
 python:
-  - "2.6"
-  - "2.7"
-  - "3.2"
-  - "3.3"
-  - "3.4"
-  # does not have headers provided, please ask https://launchpad.net/~pypy/+archive/ppa
-  # maintainers to fix their pypy-dev package.
-  - "pypy"
+  - 2.6
+  - 2.7
+  - 3.3
+  - 3.4
 
-# command to install dependencies
+env:
+  - DJANGO="Django==1.6.6"
+
+matrix:
+  exclude:
+    # Python 3.4 is not supported in Django before 1.7.
+    - env: DJANGO="Django==1.6.9"
+      python: 3.4
+    # Python 2.6 support has been dropped in Django 1.7
+    - python: 2.6
+      env: DJANGO="Django==1.7.2"
+
 install:
-  - pip install .
   - pip install -r requirements.txt
 
-# command to run tests
 script: nosetests
+
+after_success:
+  - coveralls
